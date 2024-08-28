@@ -1,0 +1,54 @@
+#step-1 
+  document.getElementById("btn").addEventListener("click",makefunction);
+
+/*
+function makefunction(){
+    const promiseObj=fetch('data.txt')
+    const bodyparam = promiseObj.then((res)=>{
+        return res.text()
+    })
+
+    bodyparam.then((data)=>{
+        alert(data)
+    })
+}
+*/
+
+//EXAMPLE-2  using async await
+/*
+async function makefunction(){
+    console.log("button clicked");
+    const response = await fetch('data.txt')
+    const data = await response.text()
+    alert(data)
+}
+    */
+
+// EXAMPLE-3 fetch the json format data
+
+function makefunction(){
+    console.log("button clicked");
+     const promiseobj = fetch('data.json').then((res)=>{
+        console.log(res.json)
+        return res.json()
+     }).then((data)=>{
+        alert(data.name)
+        alert(data.age)
+        alert(data.city)
+        alert(data.designation)
+     })
+}
+
+#step-2 index.html
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="submit" value="submit" id="btn">
+<script src="script.js"></script>
+</body>
+</html>
