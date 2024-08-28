@@ -39,6 +39,18 @@ function makefunction(){
      })
 }
 
+// EXAMPLE-4 fetch the json format data
+async function makefunction(){
+    console.log("button clicked");
+    const response = await fetch('data.json')
+    const data = await response.json()
+    console.log(data)
+    console.log(data.id)
+    console.log(data.title)
+    console.log(data.body)
+
+}
+
 #step-2 index.html
   <!DOCTYPE html>
 <html lang="en">
