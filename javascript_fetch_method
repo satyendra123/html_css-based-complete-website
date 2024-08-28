@@ -52,3 +52,14 @@ function makefunction(){
 <script src="script.js"></script>
 </body>
 </html>
+
+#step-3 data.txt
+hello sonam
+
+#step-4 data.json
+{
+    "name":"satyendra",
+    "age":25,
+    "city":"delhi",
+    "designation":"engineer"
+}
