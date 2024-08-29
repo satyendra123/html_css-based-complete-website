@@ -42,3 +42,17 @@ roll.map(a => {
 
 console.log(maxArr);
 
+#Case-2 remove the dublicant element in the array
+let roll = [50, 40, 30, 40, 20, 10];
+
+const newArr = roll.map((value, index) => {
+    if (roll.indexOf(value) === index) {
+        return value;
+    }
+    return null;
+});
+const uniqueArr = newArr.filter(value => value !== null);
+console.log(uniqueArr);
+
+#case-3 find the dublicate element
+
