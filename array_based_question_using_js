@@ -1,0 +1,44 @@
+#step-0 iterate over the element and print the number using map() function, for loop, foreach loop, for of loop and for in loop
+let roll = [50, 40, 30, 60, 20, 10];
+// 1st using map() function - map hume ek pura ka pura new array return karta hai. means agar hum const newArr = roll.map(a => {    console.log(a) }); ye kare aur last me hum console.log(newArr) kare to bhi hume sara data mil jayega
+
+roll.map(a => {
+    console.log(a)
+});
+//2nd  using for loop
+for(let i=0;i<roll.length;i++)
+{
+    console.log(roll[i])
+}
+
+// 3rd using foreach() loop
+roll.forEach((a)=>{
+    console.log(a)
+})
+
+//4th using for of loop
+for(let i of roll)
+{
+    console.log(i)
+}
+
+//5th using for in loop - it returns me the index
+// using for in loop
+for(let i in roll)
+{
+    console.log(roll[i])
+}
+
+#step-1 finding the max value
+let roll = [50, 40, 30, 60, 20, 10];
+let max = roll[0];
+
+roll.map(a => {
+    if (a > max) {
+        max = a;
+    }
+    return max;
+});
+
+console.log(maxArr);
+
