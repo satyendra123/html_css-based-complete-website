@@ -1,0 +1,198 @@
+#step-1 data.json => man lo ki server se mujhe kuch is form me data mil rha hai json ke form me
+[
+    {
+      "id": 1,
+      "name": "Satyendra",
+      "roll": 23,
+      "marks": 100,
+      "Subject": {
+        "Math": 80,
+        "Science": 78,
+        "English": 50
+      }
+    },
+    {
+      "id": 2,
+      "name": "Amit",
+      "roll": 24,
+      "marks": 95,
+      "Subject": {
+        "Math": 85,
+        "Science": 80,
+        "English": 60
+      }
+    },
+    {
+      "id": 3,
+      "name": "Rohit",
+      "roll": 25,
+      "marks": 90,
+      "Subject": {
+        "Math": 75,
+        "Science": 85,
+        "English": 65
+      }
+    },
+    {
+      "id": 4,
+      "name": "Anjali",
+      "roll": 26,
+      "marks": 92,
+      "Subject": {
+        "Math": 88,
+        "Science": 79,
+        "English": 70
+      }
+    },
+    {
+      "id": 5,
+      "name": "Pooja",
+      "roll": 27,
+      "marks": 88,
+      "Subject": {
+        "Math": 82,
+        "Science": 77,
+        "English": 59
+      }
+    },
+    {
+      "id": 6,
+      "name": "Nikhil",
+      "roll": 28,
+      "marks": 85,
+      "Subject": {
+        "Math": 78,
+        "Science": 73,
+        "English": 65
+      }
+    },
+    {
+      "id": 7,
+      "name": "Shivam",
+      "roll": 29,
+      "marks": 89,
+      "Subject": {
+        "Math": 86,
+        "Science": 81,
+        "English": 75
+      }
+    },
+    {
+      "id": 8,
+      "name": "Ritika",
+      "roll": 30,
+      "marks": 92,
+      "Subject": {
+        "Math": 79,
+        "Science": 84,
+        "English": 79
+      }
+    },
+    {
+      "id": 9,
+      "name": "Aakash",
+      "roll": 31,
+      "marks": 94,
+      "Subject": {
+        "Math": 90,
+        "Science": 87,
+        "English": 69
+      }
+    },
+    {
+      "id": 10,
+      "name": "Shweta",
+      "roll": 32,
+      "marks": 98,
+      "Subject": {
+        "Math": 85,
+        "Science": 88,
+        "English": 82
+      }
+    }
+  ]
+
+
+#step-2 index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello How are you</h1>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="fetch.js"></script>
+</body>
+</html>
+
+#step-3 fetch.js
+const fetchdata = async () =>{
+    try{
+        const response = await axios.get('data.json')
+        const data = response.data;
+        console.log(data)                              
+        // 0 :  {id: 1, name: 'Satyendra', roll: 23, marks: 100, Subject: {…}}
+        // 1 :  {id: 2, name: 'Amit', roll: 24, marks: 95, Subject: {…}}
+        // 2:   {id: 3, name: 'Rohit', roll: 25, marks: 90, Subject: {…}}
+        // 3 :  {id: 4, name: 'Anjali', roll: 26, marks: 92, Subject: {…}}
+        // 4 :  {id: 5, name: 'Pooja', roll: 27, marks: 88, Subject: {…}}
+        //  5:    {id: 6, name: 'Nikhil', roll: 28, marks: 85, Subject: {…}}
+        //6 :  {id: 7, name: 'Shivam', roll: 29, marks: 89, Subject: {…}}
+       // 7 :  {id: 8, name: 'Ritika', roll: 30, marks: 92, Subject: {…}}
+       // 8 :  {id: 9, name: 'Aakash', roll: 31, marks: 94, Subject: {…}}
+       // 9 : {id: 10, name: 'Shweta', roll: 32, marks: 98, Subject: {…
+        
+       const Name = data.map((student)=>{
+            return student.name
+        })
+        console.log(Name)               // ['Satyendra', 'Amit', 'Rohit', 'Anjali', 'Pooja', 'Nikhil', 'Shivam', 'Ritika', 'Aakash', 'Shweta']
+
+        Name.forEach((data)=>{
+            console.log(data)
+        })
+    }
+
+    catch(error){
+        console.log(error)
+    }
+}
+
+fetchdata();
+
+
+//Note-2 agar same data agr kisi server api se aa rha hota to hum kuch is tarike se krte hai
+const FetchNames = () => {
+    const [names, setNames] = useState([]);
+
+useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('YOUR_API_ENDPOINT_HERE');
+        const students = response.data
+        const namesArray = students.map(student => student.name);
+        setNames(namesArray);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  
+  return (
+    <div>
+      <h1>Student Names</h1>
+      <ul>
+        {names.map((name, index) => (
+          <li key={index}>{name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default FetchNames;
+
