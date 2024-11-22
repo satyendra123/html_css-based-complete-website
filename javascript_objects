@@ -1,0 +1,48 @@
+{/* objects are not iterable so to make it iterable we will convert it into the array. so basically if we want to fetch the key then we use   */}
+
+// EX-1 
+const form = {username:"Satyendra", age:26, city:"bhopal"}
+console.log(form.username)
+console.log(form.age)
+console.log(form.city)
+
+//EX-2
+const form = {username:"Satyendra", age:26, city:"bhopal"}
+console.log(Object.keys(form))
+console.log(Object.values(form))
+console.log(Object.entries(form))
+// agar mujhe sare ke sare keys chahiye ek array ke room me kuch is tarah se [username,age,city]
+const key = Object.keys(form)
+key.map((item)=>{
+    console.log(item)
+})
+// agar mujhe sare ke sare keys chahiye ek array ke room me kuch is tarah se [Satyendra,26,bhopal]
+const value = Object.values(form)
+value.map((item)=>{
+    console.log(item)
+})
+// agar mujhe sare keys aur values chahiye 
+const entity = Object.entries(form)
+console.log(entity)                     o/p [ [ 'username', 'Satyendra' ], [ 'age', 26 ], [ 'city', 'bhopal' ] ] Object.entries(form) means ek object ke keys aur values dono ko ek aaraay me convert karke de deta hai taki agar hume isko iterate krana hai to kara sake
+
+entity.map(([key, value]) => {
+    console.log(key, value);
+});
+
+/* only retrieve values
+const entity = Object.entries(form)
+const value= entity.map((item) => {
+    return item[0]
+});
+
+//only bretrieve keys
+const keys = entity.map((item) => {
+    return item[1]
+});
+*/
+
+entity.map(([key,value])=>{
+    return `${key}: ${value}`;
+})
+
+
