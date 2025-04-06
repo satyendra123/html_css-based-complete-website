@@ -1,3 +1,4 @@
+//Ex-1 in this we need to make the four function using the four button. 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +67,75 @@ divbtn.addEventListener("click",function(){
     thirdNumber =  Number(firstNumber.value) / Number(secondNumber.value);
     result.value = thirdNumber;
 })
+
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
+
+//EX-2 in the previous one we have made the four function. so now in this in the onclick="(operation('add'))" in every button we call the function and pass the string operator. and using switch case we are handling it.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<div class="flex justify-center items-center min-h-screen">
+    <div class="bg-white shadow-2xl rounded-2xl w-full max-w-md p-6 space-y-6">
+    <h1 class="text-center font-bold text-2xl text-gray-800">Calculator</h1>
+
+    <!-- First Number -->
+    <div class="flex justify-center items-center space-x-8">
+        <label for="first" class="text-gray-700 font-medium">First Number:</label>
+        <input type="text" id="first" name="first" placeholder="Enter first number" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+
+<div class="flex justify-center items-center space-x-4">
+ <label for="second" class="text-gray-700 font-medium">second number:</label>
+ <input type="text" id= "second" name="second" placeholder="Enter the first number" class="flex-1 px-3 py-2 border border-gray-300 rounded-lg ">
+</div>
+
+<div class="flex justify-center items-center space-x-3">
+ <button type="btn" id="Add" class="flex-1 text-center bg-gray-100" onclick="operation('add')">Add</button>
+ <button type="btn" id="Subs" class="flex-1 text-center bg-gray-100" onclick="operation('subs')">Subs</button>
+ <button type="btn" id="Mul" class="flex-1 text-center bg-gray-100" onclick="operation('mul')">Mul</button>
+ <button type="btn" id="Divide" class="flex-1 text-center bg-gray-100" onclick="operation('div')">Divide</button>
+</div>
+ <div class="flex justify-center items-center space-x-24">
+ <label for="result">Result</label>
+ <input type="text" id="result" name="result" placeholder="Result" readonly class="flex-1 px-3 py-2 border border-gray-300 rounded-lg">
+</div>
+</div>
+</div>
+<script>
+const firstNumber = document.getElementById("first");
+const secondNumber = document.getElementById("second");
+const result = document.getElementById("result");
+var thirdNumber = 0;
+const operation = (operator)=> {
+    switch(operator){
+        case 'add':
+            thirdNumber = Number(firstNumber.value) + Number(secondNumber.value);
+            break;
+        case 'subs':
+            thirdNumber = Number(firstNumber.value) - Number(secondNumber.value);
+            break;
+        case 'mul':
+            thirdNumber = Number(firstNumber.value) * Number(secondNumber.value);
+            break;
+        case 'div':
+            thirdNumber = Number(firstNumber.value) / Number(secondNumber.value);
+            break;
+        default:
+            break;
+
+    }
+        result.value= thirdNumber;
+}
 
 </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
