@@ -141,3 +141,83 @@ const operation = (operator)=> {
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
+
+#EX-3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200">
+<div class="flex justify-center items-center min-h-screen">
+    <div class="bg-white shadow-md rounded-lg p-4 w-full max-w-md">
+        <h1 class="text-center">Calculator</h1>
+        <div class="flex gap-2 items-center mt-2">
+            <label for="firstnumber" class="w-32">First Number:</label>
+            <input id="firstnumber" type="text" placeholder="enter your first number" class="flex-1 border border-gray-300 rounded" onchange="send(this.value)">
+        </div>
+        <div class="flex gap-2 items-center mt-2">
+            <label for="secondnumber" class="w-32">Second Number:</label>
+            <input id="secondnumber" type="text" placeholder="enter your second number" class="flex-1 border border-gray-300 rounded">
+        </div>
+
+        <div class="flex justify-between gap-4 p-4">
+            <button id="add" class="flex-1 btn bg-green-500">Add</button>
+            <button id="subs" class="flex-1 btn bg-green-500">Subs</button>
+            <button id="mul" class="flex-1 btn bg-green-500">Mul</button>
+            <button id="div" class="flex-1 btn bg-green-500">Div</button>
+        </div>
+
+        <div class="flex gap-2 items-center mt-2">
+            <label for="result" class="w-32">Result:</label>
+            <input id="result" type="text" placeholder="Result" class="flex-1 border border-gray-300 rounded readable">
+        </div>
+
+    </div>
+</div>
+
+<script>
+    const firstnumber = document.getElementById("firstnumber");
+    const secondnumber = document.getElementById("secondnumber");
+    const result = document.getElementById("result");
+
+    const addbtn = document.getElementById("add");
+    const subsbtn = document.getElementById("subs");
+    const mulbtn = document.getElementById("mul");
+    const divbtn = document.getElementById("div");
+
+    var calculate;
+    addbtn.addEventListener("click",()=>{
+          calculate = parseInt(firstnumber.value) + parseInt(secondnumber.value)
+          window.alert(calculate);
+          result.value= calculate;
+    })
+
+    subsbtn.addEventListener("click",()=>{
+          calculate = parseInt(firstnumber.value) - parseInt(secondnumber.value)
+          window.alert(calculate);
+          result.value= calculate;
+    })
+
+    mulbtn.addEventListener("click",()=>{
+          calculate = parseInt(firstnumber.value) * parseInt(secondnumber.value)
+          window.alert(calculate);
+          result.value= calculate;
+    })
+
+    divbtn.addEventListener("click",()=>{
+          calculate = parseInt(firstnumber.value) / parseInt(secondnumber.value)
+          window.alert(calculate);
+          result.value= calculate;
+    })
+
+    function send(value){
+       window.alert(value);
+    }
+    
+</script>
+</body>
+</html>
