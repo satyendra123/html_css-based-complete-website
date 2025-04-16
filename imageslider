@@ -1,0 +1,99 @@
+#EX-1 this is the code for image sliding when we click on the previous and the enxt button
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+<div class="flex justify-center items-center min-h-screen">
+    <div class="w-1/2 slider">
+        <img src="./images/image1.jpg" alt="" class="w-full" id="image-corousel">
+        <div class="flex justify-around items-center gap-4 mt-2">
+            <button class="btn bg-green-400 px-4" onclick="clickprev()">prev</button>
+            <button class="btn bg-red-400 px-4" onclick="clicknext()">next</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const images=["./images/image1.jpg","./images/image2.jpg","./images/image3.jpg"];
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+const currentimage = document.getElementById("image-corousel");
+var currentindex=0;
+
+const show = () =>{
+    currentimage.src = images[currentindex];
+}
+
+const clickprev = () =>{
+    currentindex = (currentindex-1 + images.length) % images.length;
+    show();
+}
+
+const clicknext = () =>{
+    currentindex = (currentindex +1) % images.length;
+    show();
+}
+
+</script>
+
+</body>
+</html>
+
+#EX-2 we can also make it looking like slider
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Slider</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+  <div class="w-1/2 overflow-hidden rounded-lg shadow-lg bg-white">
+    <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+      <img src="./images/image1.jpg" class="w-full shrink-0" alt="Image 1" />
+      <img src="./images/image2.jpg" class="w-full shrink-0" alt="Image 2" />
+      <img src="./images/image3.jpg" class="w-full shrink-0" alt="Image 3" />
+    </div>
+    <div class="flex justify-between mt-4 px-4 pb-4">
+      <button id="prev" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Prev</button>
+      <button id="next" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const slider = document.getElementById("slider");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+
+    const images = ['./images/image1.jpg', './images/image2.jpg', './images/image3.jpg'];
+    let current = 0;
+
+    function showImage(index) {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev.addEventListener("click", () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    });
+
+    next.addEventListener("click", () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    });
+  </script>
+
+</body>
+</html>
+
+#Ex-3
+
+
