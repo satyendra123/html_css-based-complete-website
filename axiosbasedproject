@@ -1,0 +1,32 @@
+Note- jo humara axios method hai wo hume kuch is tarah se json format me response deta hai. isliye api se data find karne ke liye hum humesa response.data ka use karte hai data ko nikalne ke liye
+
+{
+    config: {
+        url: 'https://example.com/api',
+        method: 'get',
+        headers: { ... },
+        timeout: 1000
+    },
+    data: { id: 1, name: 'Alice', email: 'alice@example.com' }, // Actual response data
+    headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' },
+    request: {
+        status: 200,
+        statusText: 'OK',
+        readyState: 4
+    },
+    status: 200,
+    statusText: 'OK'
+}
+
+
+1) sabse pahle hum axios ko padhte hai aur samjhte hai.
+const response = axios.get("data1.json");
+console.log(response);
+
+Note: so jab bhi mai axios se jo response nikalunga to mujhe 4 objects milte hai
+a) config:{url: "data1.json", method: 'get', headers: {'Content-Type': 'application/json','Authorization': 'Bearer token'},},
+b) data: {id: 1, name: 'Alice', email: 'alice@example.com'},
+c) headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-cache' },
+d) request: {status: 200, statusText: 'OK', readyState: 4},
+e) status: 200,
+f) statusText: 'OK'
