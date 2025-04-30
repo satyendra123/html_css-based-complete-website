@@ -20,3 +20,5 @@ EX-1 when we are performing anything in string. we should know the basics of som
   console.log(reversedata);                 console.log(reversedata);                         console.log(reversedata)      o/p ['o','l','l','e','H']         console.log(reversedata)
                                                                                               const reverseword = reversedata.join('')
                                                                                               console.log(reverseword)    // o/p- olleH
+
+5)
