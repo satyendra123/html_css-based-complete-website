@@ -1,0 +1,7 @@
+EX-1 when we are performing anything in string. we should know the basics of some string predefined methods. 
+1) const data = "Hello" 
+   console.log(data.split(''))        o/p- ['H','e','l','l','o']
+
+2) data = ['H','E','L','L','O']
+   console.log(data.join(' '));       o/p- HELLO
+   console.log(data.join('-'));       o/p- H-E-L-L-O
