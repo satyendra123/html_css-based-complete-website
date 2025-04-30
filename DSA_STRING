@@ -5,3 +5,11 @@ EX-1 when we are performing anything in string. we should know the basics of som
 2) data = ['H','E','L','L','O']
    console.log(data.join(' '));       o/p- HELLO
    console.log(data.join('-'));       o/p- H-E-L-L-O
+
+3) reverse the string                                   reverse the string
+ const data = "Hello"                                   const data = "Hello"
+   var reversedata=""                                   var reversedata=""
+   for(i=data.length-1;i>=0;i--){                       for(i=data.length-1;i>=0;i--){
+       reversedata+=data[i];                                 reversedata+=data[i];
+   }                                                       }
+  console.log(reversedata);                              console.log(reversedata);
