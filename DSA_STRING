@@ -12,7 +12,7 @@ EX-1 when we are performing anything in string. we should know the basics of som
 
 
 4) (I) reverse the string            (II) reverse the string                           (III) reverse the string                                         (IV) reverse the string using string concatenation   (V) reverse the string      
- const data = "Hello"                      const data = "Hello"                              const data = "Hello"                                            const data = "Hello"                                const data = "Hello"
+ const data = "Hello"                      const data = "Hello World"                        const data = "Hello World"                                const data = "Hello World"                                const data = "Hello World"
    var reversedata=""                      var reversedata=""                                var dataarray= data.split(''); ['H','e','l','l','o']            const reversedata = ""                              const reversedata = data.split('').reverse().join('');
    for(i=data.length-1;i>=0;i--){          for(i=0;i<=data.length-1;i++){                    const reversedata = dataarray.map((_,index)=>{                   for(let i in data){                                console.log(reversedata);
        reversedata+=data[i];                     reversedata+=data[data.length-1-i];                  return data[data.length-1-index];                          reversedata = data[i] + reversedata
