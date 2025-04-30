@@ -21,4 +21,13 @@ EX-1 when we are performing anything in string. we should know the basics of som
                                                                                               const reverseword = reversedata.join('')
                                                                                               console.log(reverseword)    // o/p- olleH
 
-5)
+5) (I) Reverse the character                (II) Reverse the sentence
+const data = "hello World How are you";
+const arraydata = data.split('');
+reversedata=''
+for(i=data.length-1;i>=0;i--){
+    reversedata+=data[i];
+}
+console.log(reversedata);   
+
+o/p- uoy era woH dlroW olleh
