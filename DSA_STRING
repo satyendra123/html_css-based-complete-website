@@ -6,10 +6,12 @@ EX-1 when we are performing anything in string. we should know the basics of som
    console.log(data.join(' '));       o/p- HELLO
    console.log(data.join('-'));       o/p- H-E-L-L-O
 
-3) (I) reverse the string                              (II) reverse the string                                      (III) reverse the string                
- const data = "Hello"                                   const data = "Hello"                                              const data = "Hello"
-   var reversedata=""                                   var reversedata=""                                                var dataarray= data.split(''); ['H','e','l','l','o']
-   for(i=data.length-1;i>=0;i--){                       for(i=0;i<=data.length-1;i++){                                    
-       reversedata+=data[i];                                 reversedata+=data[data.length-1-i];
-   }                                                       }
-  console.log(reversedata);                              console.log(reversedata);
+3) (I) reverse the string                 (II) reverse the string                               (III) reverse the string                                           (IV) reverse the string using string concatenation        
+ const data = "Hello"                          const data = "Hello"                                   const data = "Hello"                                              const data = "Hello"
+   var reversedata=""                          var reversedata=""                                     var dataarray= data.split(''); ['H','e','l','l','o']              const reversedata = ""
+   for(i=data.length-1;i>=0;i--){              for(i=0;i<=data.length-1;i++){                         const reversedata = dataarray.map((_,index)=>{                    for(let i in data){
+       reversedata+=data[i];                        reversedata+=data[data.length-1-i];                      return data[data.length-1-index];                              reversedata = data[i] + reversedata
+   }                                              }                                                       })                                                             }
+  console.log(reversedata);                     console.log(reversedata);                              console.log(reversedata)      o/p ['o','l','l','e','H']           console.log(reversedata)
+                                                                                                       const reverseword = reversedata.join('')
+                                                                                                       console.log(reverseword)    // o/p- olleH
