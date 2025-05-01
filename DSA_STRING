@@ -33,9 +33,9 @@ console.log(reversedata);                        console.log(reversesentence.joi
 
 o/p- uoy era woH dlroW olleh
 
-6) in this case we are counting the letter         (II) count the number of word in a sentence    ()
-const data = "Hello how are you";                  const data="Hello how are you"; 
-var countletter=0;                                 let countword=1;
+6) in this case we are counting the letter         (II) count the number of word in a sentence    (III) count the number of word in a sentence
+const data = "Hello how are you";                  const data="Hello how are you";                      const data ="Hello How are you";
+var countletter=0;                                 let countword=1;                                     
 for(let ch of data){                               for(let ch of data){
     if(ch ==' '){                                   if(ch == ' '){
         continue;                                   countword+=1;
@@ -46,3 +46,24 @@ console.log(countletter);                               }}
                                                      console.log(countword);
 
 Note-is case me hum map() function ka use nahi kar sakte hai kyuki map function jo hai wo array ke liye apply karte hai. so sabse pahle hume array me convert karne ke liye split() function ka use karna padhega
+
+7) capitalize the first character of the word to capital letter      (II) count the number of word in a sentence use the charAt(0) and splice() method
+let sentence = "how are you";                                              let sentence = "how are you";
+let arr = sentence.split(" ");                                             let arr = sentence.split(" ");
+let result = [];                                                           let result = [];
+for (let i = 0; i < arr.length; i++) {                                     for (let i = 0; i < arr.length; i++) {
+  let word = arr[i];                                                        let word = arr[i];
+  let capitalized = "";                                                    let capitalized = word.charAt(0).toUpperCase() + word.slice(1);
+  for (let j = 0; j < word.length; j++) {                                   result.push(capitalized);
+    if (j === 0) {                                                          }
+      capitalized += word[j].toUpperCase();                                 let finalResult = result.join(" ");
+    } else {                                                                console.log(finalResult);
+      capitalized += word[j];
+    }
+  }
+
+  result.push(capitalized);
+}
+
+let finalResult = result.join(" ");
+console.log(finalResult); // Output: "How Are You"
