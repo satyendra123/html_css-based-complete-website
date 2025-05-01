@@ -32,3 +32,17 @@ for(i=data.length-1;i>=0;i--){                         return arr[splitdata.leng
 console.log(reversedata);                        console.log(reversesentence.join(' '));   o/p- you are How
 
 o/p- uoy era woH dlroW olleh
+
+6) in this case we are counting the letter         (II) count the number of word in a sentence    ()
+const data = "Hello how are you";                  const data="Hello how are you"; 
+var countletter=0;                                 let countword=1;
+for(let ch of data){                               for(let ch of data){
+    if(ch ==' '){                                   if(ch == ' '){
+        continue;                                   countword+=1;
+    }                                               }
+    countletter+=1;                                 else{
+}                                                       continue;
+console.log(countletter);                               }}
+                                                     console.log(countword);
+
+Note-is case me hum map() function ka use nahi kar sakte hai kyuki map function jo hai wo array ke liye apply karte hai. so sabse pahle hume array me convert karne ke liye split() function ka use karna padhega
