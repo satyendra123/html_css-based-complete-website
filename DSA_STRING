@@ -21,13 +21,14 @@ EX-1 when we are performing anything in string. we should know the basics of som
                                                                                               const reverseword = reversedata.join('')
                                                                                               console.log(reverseword)    // o/p- olleH
 
+
 5) (I) Reverse the character                (II) Reverse the sentence
-const data = "hello World How are you";
-const arraydata = data.split('');
-reversedata=''
-for(i=data.length-1;i>=0;i--){
-    reversedata+=data[i];
-}
-console.log(reversedata);   
+const data = "hello World How are you";          const data="How are You"
+const arraydata = data.split('');                const splitdata = data.split(" ");
+reversedata=''                                   const reversesentence = splitdata.map((ch,index,arr)=>{
+for(i=data.length-1;i>=0;i--){                         return arr[splitdata.length-1-index];
+    reversedata+=data[i];                        })
+}                                                console.log(reversesentence);
+console.log(reversedata);                        console.log(reversesentence.join(' '));   o/p- you are How
 
 o/p- uoy era woH dlroW olleh
