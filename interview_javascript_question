@@ -1,0 +1,17 @@
+# html_css-based-complete-website
+i have made one project using html css and javascript by the coding classroom
+
+1) guess the output                                                 
+EX-1 const x=[1,2,3,4]     index- 0,1,2,3                         EX-2  const x=[1,2,3,4]   
+     console.log(1 in x)   o/p- true                                    console.log(x.includes(1))   o/p- true
+     console.log(3 in x)   o/p- true                                    console.log(x.includes(2))   o/p- true
+     console.log(4 in x)   o/p- false                                   console.log(x.includes(4))   o/p- false
+Note-  in operator => in operator give me the index not value           includes- check whether the data is included in x or not
+
+Ex-3                       EX-4 
+const x=[1,2,3,4]           const x=[1,2,3,4]
+for(let i in x){            for(let i of x){
+    console.log(x[i])           console.log(i)
+}                              }
+
+   
