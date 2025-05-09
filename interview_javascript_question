@@ -34,3 +34,20 @@ o/p- promise 1                                                                  
      promise 2                                                                                      }
      setTimeout                                                                                    }
                                                                                                    console.log(capitalized_data)
+
+EX-8 camelcase word (without using the join() method )                  EX-9 without using the slice() method
+data="hello how are you"                                                function capitalize_word(word){            data= "hello how are you";
+capitalized_data = []                                                    let new_data="";                          words=data.split(' ');
+words= data.split(' ');                                                   var first=true;                          capitalized_word=[]
+for(word of words){                                                      for(i of word){                            for(word of words){
+    capital = word.charAt(0).toUpperCase()+ word.slice(1);                 if(first==true){                          capitalized_word.push(capitalize_word(word));
+    capitalized_data.push(capital)                                        var capital = i.toUpperCase();             }
+}                                                                         new_data=capital;                         console.log(capitalized_word.join(' '));
+console.log(capitalized_data);                                            first=false;
+var new_data=""                                                           }
+for(capital_word of capitalized_data){                                     else{
+    new_data+= capital_word + " ";                                            new_data+=i
+}                                                                            }
+console.log(new_data)                                                       }
+                                                                            return new_data
+                                                                           }
