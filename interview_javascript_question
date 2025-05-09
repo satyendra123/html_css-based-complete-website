@@ -19,18 +19,18 @@ for(let i in x){            for(let i of x){
     console.log(x[i])           console.log(i)
 }                              }
 
-Ex-5                               EX-6
-promise.then(() => {               let data = "hello";
-  console.log('Promise 1');        console.log(data[0].toUpperCase() + data.slice(1));
-});
-setTimeout(() => {                 Ex-7
-  console.log('setTimeout');       
-}, 0);
-promise.then(() => {
-  console.log('Promise 2');
-});
-
-o/p- promise 1
-     promise 2
-     setTimeout
-   
+Ex-5                               EX-6                                                    Ex-7
+promise.then(() => {               let data = "hello";                                         let data = "hello";
+  console.log('Promise 1');        console.log(data[0].toUpperCase() + data.slice(1));         var first=true;
+});                                                                                             capitalized_data=""
+setTimeout(() => {                                                                              for(i of data){
+  console.log('setTimeout');                                                                    if(first===true){
+}, 0);                                                                                             var capital = i.toUpperCase();
+promise.then(() => {                                                                             capitalized_data+=capital
+  console.log('Promise 2');                                                                      first=false;
+});                                                                                              }
+                                                                                                   else{
+o/p- promise 1                                                                                        capitalized_data+=i
+     promise 2                                                                                      }
+     setTimeout                                                                                    }
+                                                                                                   console.log(capitalized_data)
