@@ -14,4 +14,18 @@ for(let i in x){            for(let i of x){
     console.log(x[i])           console.log(i)
 }                              }
 
+Ex-5
+promise.then(() => {
+  console.log('Promise 1');
+});
+setTimeout(() => {
+  console.log('setTimeout');
+}, 0);
+promise.then(() => {
+  console.log('Promise 2');
+});
+
+o/p- promise 1
+     promise 2
+     setTimeout
    
