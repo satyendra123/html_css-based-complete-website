@@ -19,12 +19,12 @@ for(let i in x){            for(let i of x){
     console.log(x[i])           console.log(i)
 }                              }
 
-Ex-5
-promise.then(() => {
-  console.log('Promise 1');
+Ex-5                               EX-6
+promise.then(() => {               let data = "hello";
+  console.log('Promise 1');        console.log(data[0].toUpperCase() + data.slice(1));
 });
-setTimeout(() => {
-  console.log('setTimeout');
+setTimeout(() => {                 Ex-7
+  console.log('setTimeout');       
 }, 0);
 promise.then(() => {
   console.log('Promise 2');
