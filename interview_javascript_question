@@ -1,5 +1,9 @@
 # html_css-based-complete-website
 i have made one project using html css and javascript by the coding classroom
+Ex-0
+let numbers = [1, 2, 3, 4, 5];
+delete numbers[2];
+console.log(numbers)          o/p- [1,undefined,3,4,5]
 
 1) guess the output                                                 
 EX-1 const x=[1,2,3,4]     index- 0,1,2,3                         EX-2  const x=[1,2,3,4]   
