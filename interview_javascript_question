@@ -1,10 +1,11 @@
 # html_css-based-complete-website
 i have made one project using html css and javascript by the coding classroom
-Ex-0
-let numbers = [1, 2, 3, 4, 5];
-delete numbers[2];
-console.log(numbers)          o/p- [ 1, <1 empty item>, 3, 4, 5, 6 ]
-
+Ex-0 delete- delete is used to delete the key not the variable           EX-1               
+let numbers = [1, 2, 3, 4, 5];                                           let numbers = [1,2,3,4,5];
+delete numbers[2];                                                           delete numbers;
+console.log(numbers)                                                         console.log(numbers);         o/p- [1,2,3,4,5]
+Note-  o/p- [ 1, <1 empty item>, 3, 4, 5, 6 ]                             Note- when i delete the variable then also it prints the variable
+                                                                          b'coz delete does not delete the variable.it only delete the objects
 1) guess the output                                                 
 EX-1 const x=[1,2,3,4]     index- 0,1,2,3                         EX-2  const x=[1,2,3,4]   
      console.log(1 in x)   o/p- true                                    console.log(x.includes(1))   o/p- true
