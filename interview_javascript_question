@@ -13,13 +13,13 @@ EX-1 const x=[1,2,3,4]     index- 0,1,2,3                         EX-2  const x=
      console.log(4 in x)   o/p- false                                   console.log(x.includes(4))   o/p- false
 Note-  in operator => in operator give me the index not value           includes- check whether the data is included in x or not
 
-Ex-3                       EX-4 
-const x=[1,2,3,4]           const x=[1,2,3,4]
-for(let i in x){            for(let i of x){
-    console.log(x[i])           console.log(i)
-}                              }
+Ex-3                       EX-4                      EX-5                                  EX-6 console.log((2,3,2+3))
+const x=[1,2,3,4]           const x=[1,2,3,4]        let x= (2,3,2+3);                     Note- because first it will resolve comma 
+for(let i in x){            for(let i of x){         console.log(x)   o/p-5                operator  and this gives me the last value
+    console.log(x[i])           console.log(i)       Note- because this is comma operator
+}                              }                     and this gives me the last value
 
-Ex-5                               EX-6                                                    Ex-7
+Ex-6                               EX-7                                                    Ex-8
 promise.then(() => {               let data = "hello";                                         let data = "hello";
   console.log('Promise 1');        console.log(data[0].toUpperCase() + data.slice(1));         var first=true;
 });                                                                                             capitalized_data=""
@@ -35,7 +35,7 @@ o/p- promise 1                                                                  
      setTimeout                                                                                    }
                                                                                                    console.log(capitalized_data)
 
-EX-8 camelcase word (without using the join() method )                  EX-9 without using the slice() method
+EX-9 camelcase word (without using the join() method )                  EX-10 without using the slice() method
 data="hello how are you"                                                function capitalize_word(word){            data= "hello how are you";
 capitalized_data = []                                                    let new_data="";                          words=data.split(' ');
 words= data.split(' ');                                                   var first=true;                          capitalized_word=[]
