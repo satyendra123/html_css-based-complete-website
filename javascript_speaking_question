@@ -2,18 +2,18 @@ Q.1) what is callback functon
 Ans-> Callback() - A callback function is simply a function passed as an argument to another function, which is then invoked (called) inside the outer function to complete
  some kind of routine or action. means agar hum chahte hai ki jab aisa kuch ho tbhi ye wala function mera chalna start ho to hum ek function banayenge jisko call karna hai aur ise dusre function me as a parameter pass kar denge
 
-EX-1                                          Ex-2 isme hum ek function ko directly pass karte hai
-  function add(a, callback){                       function add(a, callback){
-  console.log(`we got the number ${a}`);           console.log(`we got the number ${a}`);
-  if(typeof(callback)=='function'){                if(typeof(callback)=='function'){
-    callback()                                         callback()
-    }                                              }
-  add(5,()=>{                                      const display = ()=>{
-   console.log("we are sending the data");            console.log("we are sending the data");
-})                                                 }
-                                                    add(5,display);
-o/p- we got the number 5                          o/p- we got the number 5
-     we are sending the data                           we are sending the data
+EX-1                                                            Ex-2 isme hum ek function ko directly pass karte hai
+  function add(a, callback){                                    function add(a, callback){
+  console.log(`we got the number ${a}`);                            console.log(`we got the number ${a}`);
+  if(typeof(callback)=='function'){                                 callback()
+    callback()                                                   } 
+    }                                                           
+  add(5,()=>{                                                   const display = ()=>{
+   console.log("we are sending the data");                            console.log("we are sending the data");
+})                                                               }
+                                                               add(5,display);
+o/p- we got the number 5                                       o/p- we got the number 5
+     we are sending the data                                   we are sending the data
 
 Note- ye tab bhi kaam karta jab hum simply add(5)
 likhte lekin output me hume o/p= we got the number 5 milta
