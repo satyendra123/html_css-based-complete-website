@@ -51,3 +51,21 @@ for(capital_word of capitalized_data){                                     else{
 console.log(new_data)                                                       }
                                                                             return new_data
                                                                            }
+
+Q. i want to make this triplets into the ascending order
+const data = [[2,3,1],[1,4,3],[4,5,2],[1,2,3]]
+increasing_order = data.map((innerdata,index)=>{
+                    const new_data=  innerdata.sort((a,b)=>{
+                        return a-b;
+                    })
+                    return new_data
+})
+console.log(increasing_order)
+
+Q. slice()- splice method is used to slice the array data like
+EX-1                        EX-2                          EX-3                    EX-4 suppose we want to convert it into the camelCase             EX-5 suppose we want to convert it into the camelCase
+x=[1,2,3,4,5]                x=[1,2,3,4,5]                 x="hello"               x="hello"                                                        x="hello"
+new_array=x.slice(1)        new_array=(x.slice(1,4))       new_sring(x.slice(1))   x = x.charAt(0).toUpperCase() + x.slice(1);                      x = x[0].toUpperCase() + x.slice(1);
+o/p- [2,3,4,5]               o/p- [2,3,4]                  o/p- ello               console.log(x);                                                  console.log(x);
+Note-isme 1st ko chorkar     Note-isme 1st element se 3rd                          Note- isme humne first character ko upparcase me kiya aur                                                                                                                                                        
+sari values de degi          tak ki sari values legi                               concatenate kar diya uske bache hue element ke sath
