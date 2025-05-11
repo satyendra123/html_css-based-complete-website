@@ -1,15 +1,21 @@
 Q.1) How to make the database connection in the node js express js.                                                       
-Ans->                                                                                                                           EX-1 function connect(callback) {
-import mysql from 'mysql2'                                                                                                           setTimeout(() => {
-const connection = mysql.createConnection({host:"localhost",user:'root',password:"",database:"student"})                             const success = Math.random() > 0.5;
-connection.connect((err)=>{                                                                                                           if (success) {
-     if(err){                                                                                                                             callback(null);
-      console.log("database connection error");                                                                                        } else {
-     }                                                                                                                                    callback(new Error("Failed to connect"));} 1000);}
-     else{                                                                                                                               },
-      console.log("database successfully connected");                                                                                connect((err)=> {
-     }                                                                                                                                   if (err) {
-})                                                                                                                                           console.log("Error:", err.message);} 
-export default connection                                                                                                                else {
-                                                                                                                                             console.log("successfully connected!"); }
-                                                                                                                                            });
+Ans-> config/connectiondb.js                                                                                                    2) app.js File                                                                        EX-1 function connect(callback) {
+import mysql from 'mysql2'                                                                                                         import express from 'express'                                                      setTimeout(() => {
+const connection = mysql.createConnection({host:"localhost",user:'root',password:"",database:"student"})                           import dotenv from 'dotenv'                                                           const success = Math.random() > 0.5;
+connection.connect((err)=>{                                                                                                        import cors from 'cors'                                                               if (success) {
+     if(err){                                                                                                                      const app = express();                                                                   callback(null);
+      console.log("database connection error");                                                                                    dotenv.config();                                                                      } else {
+     }                                                                                                                             const port = process.env.PORT;                                                               callback(new Error("Failed to connect"));} 1000);}
+     else{                                                                                                                         console.log(port);                                                                           },
+      console.log("database successfully connected");                                                                              app.use(cors());                                                                      connect((err)=> {
+     }                                                                                                                             app.listen(port,()=>{                                                                 if (err) {
+})                                                                                                                                     console.log(`Server is listening at ${port}`)                                           console.log("Error:", err.message);} 
+export default connection                                                                                                           })                                                                                    else {
+                                                                                                                                                                                                                               console.log("successfully connected!"); }
+Note- connect()- connect method jab call hota hai to agr wo database se connect ho jata hai to kuch return me nahi deta hai                                                                                                     });
+                 aur agr connect hone me agar error aata hai to err ko return karta hai.
+
+aur hum ise directly app..js me jab file ko import karenge to wo directly hi database wale function ko chala dega aur connection established kar dega. lekin man lo ki humne app.js
+me apne .env file se data ko read kiya hai. aur us data ko hum send karna chahta hai connection banane ke liye. so hume app.js se un variable ko send karna hoga config/dbconnection.js file ke andar kuch is tarike se
+
+
