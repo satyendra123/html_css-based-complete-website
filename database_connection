@@ -18,4 +18,26 @@ Note- connect()- connect method jab call hota hai to agr wo database se connect 
 aur hum ise directly app..js me jab file ko import karenge to wo directly hi database wale function ko chala dega aur connection established kar dega. lekin man lo ki humne app.js
 me apne .env file se data ko read kiya hai. aur us data ko hum send karna chahta hai connection banane ke liye. so hume app.js se un variable ko send karna hoga config/dbconnection.js file ke andar kuch is tarike se
 
+#EX-2 config/connectiondb.js                                                               
+import express from 'express'                                                               import mysql from 'mysql2'
+import dotenv from 'dotenv'                                                                 function dbconnection(db_data){
+import cors from 'cors'                                                                     const connection = mysql.createConnection({host:db_data.host, user:db_data.user, password:db_data.password, database:db_data.database});
+import dbconnection from './config/connectiondb.js';                                        connection.connect((err)=>{
+const app = express();                                                                      if(err){
+dotenv.config();                                                                              console.log("error in connecting to the database");
+const port = process.env.PORT;                                                               }
+const host = process.env.DB_HOST;                                                           else{
+const user = process.env.DB_USER;                                                             console.log("database is successfully connecteed");
+const password = process.env.DB_PASS;                                                        }
+const db_name = process.env.DB_NAME;                                                        })
+                                                                                             return connection
+const db_config = {  host: host, user: user, password:password, database:db_name };        }                                                                                        export default dbconnection
+dbconnection(db_config);
+console.log(port);
+app.use(cors());
+
+app.listen(port,()=>{
+    console.log(`Server is listening at ${port}`)
+})
+
 
