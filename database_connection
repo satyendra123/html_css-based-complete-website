@@ -1,0 +1,15 @@
+Q.1) How to make the database connection in the node js express js.                                                       
+Ans->                                                                                                                           EX-1 function connect(callback) {
+import mysql from 'mysql2'                                                                                                           setTimeout(() => {
+const connection = mysql.createConnection({host:"localhost",user:'root',password:"",database:"student"})                             const success = Math.random() > 0.5;
+connection.connect((err)=>{                                                                                                           if (success) {
+     if(err){                                                                                                                             callback(null);
+      console.log("database connection error");                                                                                        } else {
+     }                                                                                                                                    callback(new Error("Failed to connect"));} 1000);}
+     else{                                                                                                                               },
+      console.log("database successfully connected");                                                                                connect((err)=> {
+     }                                                                                                                                   if (err) {
+})                                                                                                                                           console.log("Error:", err.message);} 
+export default connection                                                                                                                else {
+                                                                                                                                             console.log("successfully connected!"); }
+                                                                                                                                            });
