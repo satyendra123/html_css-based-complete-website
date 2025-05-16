@@ -1,0 +1,74 @@
+1) build() and create() method= create() method is a asynchromous. so we need to use the await for it. and with the build() method we need to call the data.save() also.
+
+static async createUser(req,res){
+    try{
+      console.log("Data received from the Postman", req.body);
+      const {name,email,className,city} = req.body;
+     //const data = await User.create({name:"sandhya",email:"sandhya@gmail.com",className:"B.tech",city:"jaipur"});
+      const data = await User.create({name:name,email:email,className:className,city:city});
+      res.status(201).json({message:"User created successfully",data:data});
+    }
+    catch(err){
+      console.log(err);
+      res.status(500);
+      res.json({message:"Internal server error",error:err.message});
+    }
+  }
+
+2) findAll() method= it gives me the complete data. 
+(i)                                                                          (II)                                                                                      (III)  
+  static async getAllUsers(req, res) {                                           static async getAllUsers(req, res) {                                                       static async getAllUsers(req,res){
+  try {                                                                          try {                                                                                       try{
+    const data = await User.findAll()                                                 const data = await User.findAll();                                                          const data = await User.findAll();
+    res.status(200);                                                                  const formattedArray = data.map(user => ({                                                   const formattedData = {
+    res.json({message:"data fetched successfully",data:data});                                                 id: user.id,                                                                    data: data.map(user=>{
+  }                                                                                                            name: user.name,                                                                              return{
+  catch (err) {                                                                                                email: user.email                                                                                id:user.id,
+    console.error(err);                                                                                       }));                                                                                              name:user.name,
+    res.status(500).json({                                                             const formattedData = { data: formattedArray};                                                                            email:user.email
+      message: "Internal server error",                                               res.status(200);                                                                                                           }
+     error: err.message                                                              res.json(formattedData);                                                                                                  })}   
+    });                                                                            catch (err){                                                                                     res.status(200).json(formattedData);}                                                                                                  
+  }                                                                                 res.status(500).json({message: "Internal server error",error: err.message})                                                
+ }
+                                                                                                                                        
+(IV) using the attribute method() => we can fetch the specified column  
+
+  static async getAllUsers(req, res) {
+  try {
+    const data = await User.findAll({
+      attributes: ['id', 'name', 'email']
+    });
+
+    res.status(200).json(data);
+  } 
+
+catch (err) {
+    console.error(err);
+    res.status(500).json({message: "Internal server error",error: err.message});
+  }
+}
+                                                                                                                                      
+                                                                                                                                            
+                                                                                                                                            
+                                                                                                                                                     
+                                                                                                                                                           
+                                                                                                                                                                    
+                                                                                                                                                                     
+                                                                                                                                                                    
+                                                                                                                                                                  
+                                                                                                                                                                
+                                                                                                                                                              
+
+                                                                                                                                               
+                                                                                                                                                
+                                                                                                                                             
+
+    catch(err){
+      console.log(err);
+      console.log(err.message);
+      res.status(500);
+      res.json({message:"Internal server error",error:err.message});
+    }
+
+  }
