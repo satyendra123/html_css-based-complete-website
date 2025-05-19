@@ -44,3 +44,7 @@ function isdublicate(data)                                                   EX-
 }                                                                                }
 const result = isdublicate([4,2,3,2,3,7,1,9]);                                 const result = containsDuplicate([4,1,2,3,4,5,4])
 console.log(result);                                                           console.log(result)
+
+Q.4) product of an array except self
+
+
