@@ -63,12 +63,12 @@ const result = multiplyexceptself([4, 1, 2, 3, 5]);
 console.log(result); 
 
 Q.5) find the unique number from the array
-(i) const data=[2,3,1,2,4,5,6]                                 (ii)
-uniquedata=[]                                                    const data = [2, 3, 1, 2, 4, 5, 6];
-data.map((item)=>{                                               const uniquedata = data.filter((item, index) => {                                                                                                                                                                  
-                    if(!uniquedata.includes(item)){                                  return data.indexOf(item) === index;                               
-                        uniquedata.push(item)                                    });                   
-                    }                                            console.log(uniquedata);
-})
-console.log(uniquedata)
+(i) const data=[2,3,1,2,4,5,6]                                 (ii)                                                              (iii)
+uniquedata=[]                                                    const data = [2, 3, 1, 2, 4, 5, 6];                                  const data = [2, 3, 1, 2, 4, 5, 6];
+data.map((item)=>{                                               const uniquedata = data.filter((item, index) => {                    let uniquedata = [];                                                                                                                                            
+                    if(!uniquedata.includes(item)){                                  return data.indexOf(item) === index;              for (let i = 0; i < data.length; i++) {                      
+                        uniquedata.push(item)                                    });                                                      if (!uniquedata.includes(data[i])) {
+                    }                                            console.log(uniquedata);                                                    uniquedata.push(data[i]);
+})                                                                                                                                          }}
+console.log(uniquedata)                                                                                                                 console.log(uniquedata) 
 
