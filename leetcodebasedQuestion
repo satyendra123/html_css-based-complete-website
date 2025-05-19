@@ -1,0 +1,17 @@
+Q.1) 
+const data = [2, 5, 3, 1, 6];
+let left = 0;
+let right = 1;
+let maxProfit = 0;
+while (right < data.length) {
+  if (data[right] > data[left]) {
+    const profit = data[right] - data[left];
+    maxProfit = Math.max(profit, maxProfit);
+  } else {
+    left = right;
+  }
+  right++;
+}
+console.log(maxProfit);
+
+Q.2) 
