@@ -83,17 +83,26 @@ for (let i = 0; i < data.length; i++) {                  acc[num] = (acc[num] ||
   }
 }
 console.log(occurance);
+ 
+Q.7) find all the subarray of the array              Q.8) find the maximum sum of subarray
+let data = [1, 3, 2, 4, 6, 2];                          let data = [1, 3, 2, 4, 6, 2];
+let allsubarray = [];                                   let allsubarray = [];
+for (let i = 0; i < data.length; i++) {                 let maxSum = -Infinity;
+    for (let j = i; j < data.length; j++) {             let maxSubarray = [];
+        let subarray = [];                              for (let i = 0; i < data.length; i++) {
+        for (let k = i; k <= j; k++) {                    for (let j = i; j < data.length; j++) {
+            subarray.push(data[k]);                            let subarray = [];
+        }                                                      let sum = 0;
+        allsubarray.push(subarray);                            for (let k = i; k <= j; k++) {
+    }                                                               subarray.push(data[k]);
+}                                                                   sum += data[k];
+console.log(allsubarray);                                      }
+                                                           allsubarray.push(subarray);
+                                                          if (sum > maxSum) {
+                                                             maxSum = sum;
+                                                              maxSubarray = subarray;  }}}
+                                                         console.log("All subarrays:", allsubarray);
+                                                         console.log("Maximum sum:", maxSum);
+                                                         console.log("Maximum sum subarray:", maxSubarray);
 
-Q.7) find all the subarray of the array
-let data = [1, 3, 2, 4, 6, 2];
-let allsubarray = [];
-for (let i = 0; i < data.length; i++) {
-    for (let j = i; j < data.length; j++) {
-        let subarray = [];
-        for (let k = i; k <= j; k++) {
-            subarray.push(data[k]);
-        }
-        allsubarray.push(subarray);
-    }
-}
-console.log(allsubarray);
+Q.9)
