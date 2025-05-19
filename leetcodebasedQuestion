@@ -1,4 +1,4 @@
-Q.1) 
+Q.1) buy an sell problem
 const data = [2, 5, 3, 1, 6];
 let left = 0;
 let right = 1;
@@ -15,4 +15,32 @@ while (right < data.length) {
 }
 console.log(maxProfit);
 
-Q.2) 
+Q.2) two sum problem ()
+function twosum(data,target)
+{
+    for(i=0;i<data.length;i++){
+        for(j=i+1;j<data.length;j++){
+            if(target == data[i] + data[j]){
+                return [i,j]
+            }
+        }
+    }
+    return 0
+}
+const result = twosum([4,2,7,1,9], 8);
+console.log(result);
+
+Q.3) Leetcode question 217- return true if anyvalueis present atleast twice in the array otherwise return false
+function isdublicate(data)                                                   EX-2 using set
+{                                                                            function containsDuplicate(nums) {
+  for(i=0;i<data.length;i++){                                                      const seen = new Set();
+      for(j=i+1;j<data.length;j++){                                                for (let num of nums) {
+          if(data[i]==data[j]){                                                        if (seen.has(num)){
+              return false                                                                return true;
+          }                                                                                 }
+      }                                                                                seen.add(num);
+  }                                                                                    }
+  return true                                                                      return false;
+}                                                                                }
+const result = isdublicate([4,2,3,2,3,7,1,9]);                                 const result = containsDuplicate([4,1,2,3,4,5,4])
+console.log(result);                                                           console.log(result)
