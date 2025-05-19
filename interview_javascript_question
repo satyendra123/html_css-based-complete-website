@@ -69,3 +69,5 @@ new_array=x.slice(1)        new_array=(x.slice(1,4))       new_sring(x.slice(1))
 o/p- [2,3,4,5]               o/p- [2,3,4]                  o/p- ello               console.log(x);                                                  console.log(x);
 Note-isme 1st ko chorkar     Note-isme 1st element se 3rd                          Note- isme humne first character ko upparcase me kiya aur                                                                                                                                                        
 sari values de degi          tak ki sari values legi                               concatenate kar diya uske bache hue element ke sath
+
+Q.) 
