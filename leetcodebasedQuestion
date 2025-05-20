@@ -105,4 +105,17 @@ console.log(allsubarray);                                      }
                                                          console.log("Maximum sum:", maxSum);
                                                          console.log("Maximum sum subarray:", maxSubarray);
 
-Q.9)
+Q.9)find the minimum and the index of the minimum
+(i)const data = [2,4,1,6,9]                             (ii) in the rotated sorted array do it with o(logn)
+min=data[0]                                                 function findMinRotatedSorted(arr) {
+index=0                                                               let left = 0, right = arr.length - 1;
+for(i=0;i<data.length;i++){                                           while (left < right) {                            
+    if(data[i]<min){                                                   const mid = Math.floor((left + right) / 2);                                                    
+        min=data[i]                                                     if (arr[mid] > arr[right]) {
+        index=i                                                              left = mid + 1;
+    }                                                                    } else {
+}                                                                        right = mid;
+console.log(min,index)                                                  }}
+                                                                       return arr[left];}
+                                                              const arr = [4, 5, 6, 7, 0, 1, 2];
+                                                              console.log(findMinRotatedSorted(arr));
