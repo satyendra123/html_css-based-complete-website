@@ -69,6 +69,14 @@ filter()-
                                                                                                                                                                                            //return pre.concat(friend.books);
   console.log(booksOfAge25);                                                                                                                                                              }, []);
                                                                                                                                                                                 Note- both will work                                                                                                                                                    console.log(result);   
+setTimeout()- setTimeout() function is used to give the delay, runs only once after the delay.             setInterval()-function is used to Executes a function repeatedly at regular intervals.. 
+              it takes the callback function                                                                              it takes the callback function
+
+EX-1) after 2 seconds it will run and print the this runs after 2 second                                   EX-1) runs in every 2 second
+setTimeout(() => {                                                                                          setInterval(() => {
+  console.log("This runs after 2 seconds");                                                                       console.log("This runs every 2 seconds");
+}, 2000);                                                                                                   }, 2000);
+
 
 Q.5) What is Event loop
 
