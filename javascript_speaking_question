@@ -37,9 +37,16 @@ function show(){                                              function outerfunc
 
 show()                                                          o/p= 14
 
+Q.3) what is hoisting
+hoisting- javascript will put all the variables outside before compiling.
 
-
-
-
-
-Q.3) 
+ex-1                                               Ex-2)                                           Ex-3
+console.log(x);                                         var employeeId = 'abc123';                     var employeeId = 'abc123';
+const x=5                                               function foo() {                                function foo() {
+                                                              employeeId = '123bcd';                               employeeId = '123bcd';
+Note- in this it will display 5. means i have                 return;                                              return;
+access it before and define it later but then              }                                                       function employeeId() {}
+also it is not showing any error                        foo();                                                    }      
+                                                        console.log(employeeId);                        foo();
+                                                        o/p- 123bcd                                     console.log(employeeId);     
+                                                                                                        o/p= abc123
