@@ -66,3 +66,29 @@ filter()-
                                                                                                                                                                                            //return pre.concat(friend.books);
   console.log(booksOfAge25);                                                                                                                                                              }, []);
                                                                                                                                                                                 Note- both will work                                                                                                                                                    console.log(result);   
+
+Q.5) What is Event loop
+
+
+
+
+
+
+Q.6) Event handling in javascript
+
+
+
+
+
+
+
+
+Q.7) what is ES6 and why do we use it
+1) let and const function scope or block scope variable declaration
+2) arrow function
+3) Template literals
+4) Destructuring assignment
+5) rest and spread operator 
+6) import and export module
+7) callback function
+8) Higher order function
