@@ -2,18 +2,44 @@ Q.1) what is callback functon
 Ans-> Callback() - A callback function is simply a function passed as an argument to another function, which is then invoked (called) inside the outer function to complete
  some kind of routine or action. means agar hum chahte hai ki jab aisa kuch ho tbhi ye wala function mera chalna start ho to hum ek function banayenge jisko call karna hai aur ise dusre function me as a parameter pass kar denge
 
-EX-1                                                            Ex-2 isme hum ek function ko directly pass karte hai
-  function add(a, callback){                                    function add(a, callback){
-  console.log(`we got the number ${a}`);                            console.log(`we got the number ${a}`);
-  if(typeof(callback)=='function'){                                 callback()
-    callback()                                                   } 
-    }                                                           
-  add(5,()=>{                                                   const display = ()=>{
-   console.log("we are sending the data");                            console.log("we are sending the data");
-})                                                               }
-                                                               add(5,display);
-o/p- we got the number 5                                       o/p- we got the number 5
-     we are sending the data                                   we are sending the data
+EX-1                                                            Ex-2 isme hum ek function ko directly pass karte hai          EX-3 in the server and in many places we used it
+  function add(a, callback){                                    function add(a, callback){                                     import express from 'express'
+  console.log(`we got the number ${a}`);                            console.log(`we got the number ${a}`);                     import dotenv from 'dotenv'
+  if(typeof(callback)=='function'){                                 callback()                                                 import cors from 'cors'
+    callback()                                                   }                                                              dotenv.config() 
+    }                                                                                                                           const app = express()
+  add(5,()=>{                                                   const display = ()=>{                                           const port = env.process.PORT
+   console.log("we are sending the data");                            console.log("we are sending the data");                   app.use(express.json())
+})                                                               }                                                              app.use(cors())
+                                                               add(5,display);                                                  app.listen(port,()=>{
+o/p- we got the number 5                                       o/p- we got the number 5                                            console.log(`Server is running at http://localhost/${port}`)                      
+     we are sending the data                                   we are sending the data                                          })
 
 Note- ye tab bhi kaam karta jab hum simply add(5)
 likhte lekin output me hume o/p= we got the number 5 milta
+
+Q.2) what is Clouser
+Ans) Closer is a feature in javascript where a function has access to its outer scope even after the outer function has returned.
+it is created when a function is defined inside another function (nested function), and the inner function retains access to the variable
+in the outer function scope
+
+Ex-1                                                         EX-2 
+function show(){                                              function outerfunction(x){
+   var j="j is the local variable of outer function"             return function innerfunction(y){
+   document.write(j+"<br>")                                              return x+y
+   function innerfun(){                                                 }
+      var k = "k is a local vari of inner function")             }
+      document.write(k+"<br>");                                
+      document.write(j+"<br>");                                 const add = outerfunction(5)
+     }                                                          const result = add(9)
+   innerfun();                                                  console.log(result)
+}
+
+show()                                                          o/p= 14
+
+
+
+
+
+
+Q.3) 
