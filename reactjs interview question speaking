@@ -1,1 +1,26 @@
+context Api- context provides a way to pass data through the component tree without having to pass props down manually at every level.
+             actually man lo two component hai. so agar mera data write component me hai aur mujhe usko dusre component jaise hello me send karna hai to mai sabse pahle is data ko sare element me props
+             kara kar app.js me lana padhega aur phir hume waha se props driling ke through parents to child me data pass karna padhega
+
+              App.js
+    display           Dashboard
+    hello             View
+                      Read
+                      Write  {name: Rahul}
+
+
+useEffect()
+
+
+
+
+useMemo()
+
+
+
+
+useRef()
+
+
+
 
