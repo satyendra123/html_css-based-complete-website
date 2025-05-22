@@ -52,7 +52,10 @@ also it is not showing any error                        foo();                  
                                                                                                         o/p= abc123
 
 Q.4) what is higher order function = which accepts the callback function as an argument and return something. is called the Hight order function
-EX-1  Higher Order Function=                                                        
+EX-1  Higher Order Function= (1) it takes the function as an argument
+                             (2) it may return a function
+                              Ex. map(), reduce(), filter(), forEach(), find(), findIndex(), some(), every(), sort(), setTimeout(), setInterval()
+
 filter()-
                                                                                                                                                                               reduce method
  let friends = [                                                                                                                                                              let friends = [
