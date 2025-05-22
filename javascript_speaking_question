@@ -51,19 +51,18 @@ also it is not showing any error                        foo();                  
                                                         o/p- 123bcd                                     console.log(employeeId);     
                                                                                                         o/p= abc123
 
-Q.4) what is higher order function
-map()-                                                           
+Q.4) what is higher order function = which accepts the callback function as an argument and return something. is called the Hight order function
+EX-1  Higher Order Function=                                                        
 filter()-
-                                                                                                                 reduce method
-                                                                                                                   let friends = [
-                                                                                                                                  {name: 'Anna',books: ['Bible', 'Harry potter'],age: 21},
-                                                                                                                                  {name: 'Bob',books: ['The Hobbit', 'Game of Thrones'],age: 25},
-                                                                                                                                  {name: 'Charlie',books: ['Javascript Essentials', 'Eloquent JavaScript'],age: 23}
-                                                                                                                                 ];
+                                                                                                                                                                              reduce method
+ let friends = [                                                                                                                                                              let friends = [
+                 {name: 'Anna',books: ['Bible', 'Harry potter'],age: 21},                                                                                                                    {name: 'Anna',books: ['Bible', 'Harry potter'],age: 21},
+                 {name: 'Bob',books: ['The Hobbit', 'Game of Thrones'],age: 25},                                                                                                             {name: 'Bob',books: ['The Hobbit', 'Game of Thrones'],age: 25},
+                 {name: 'Charlie',books: ['Javascript Essentials', 'Eloquent JavaScript'],age: 23}                                                                                           {name: 'Charlie',books: ['Javascript Essentials', 'Eloquent JavaScript'],age: 23}
+              ];                                                                                                                                                                            ];
 
-                                                                                                                    let result = friends.reduce((pre, curr) => {
-                                                                                                                                       return [...pre, ...curr.books];
-                                                                                                                                       //return pre.concat(friend.books);
-                                                                                                                                  }, []);
-                                                                                                                    console.log(result);
-                                                                                                                    Note- both will work 
+  let booksOfAge25 = friends.filter(friend => friend.age === 25)                                                                                                              let result = friends.reduce((pre, curr) => {
+                            .flatMap(friend => friend.books);                                                                                                                               return [...pre, ...curr.books];
+                                                                                                                                                                                           //return pre.concat(friend.books);
+  console.log(booksOfAge25);                                                                                                                                                              }, []);
+                                                                                                                                                                                Note- both will work                                                                                                                                                    console.log(result);   
