@@ -50,3 +50,20 @@ also it is not showing any error                        foo();                  
                                                         console.log(employeeId);                        foo();
                                                         o/p- 123bcd                                     console.log(employeeId);     
                                                                                                         o/p= abc123
+
+Q.4) what is higher order function
+map()-                                                           
+filter()-
+                                                                                                                 reduce method
+                                                                                                                   let friends = [
+                                                                                                                                  {name: 'Anna',books: ['Bible', 'Harry potter'],age: 21},
+                                                                                                                                  {name: 'Bob',books: ['The Hobbit', 'Game of Thrones'],age: 25},
+                                                                                                                                  {name: 'Charlie',books: ['Javascript Essentials', 'Eloquent JavaScript'],age: 23}
+                                                                                                                                 ];
+
+                                                                                                                    let result = friends.reduce((pre, curr) => {
+                                                                                                                                       return [...pre, ...curr.books];
+                                                                                                                                       //return pre.concat(friend.books);
+                                                                                                                                  }, []);
+                                                                                                                    console.log(result);
+                                                                                                                    Note- both will work 
