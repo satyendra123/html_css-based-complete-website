@@ -90,5 +90,36 @@ Q.7) what is ES6 and why do we use it
 4) Destructuring assignment
 5) rest and spread operator 
 6) import and export module
-7) callback function
-8) Higher order function
+7) promises, .then and async await
+8) for of loop
+
+Q.8) if promises is introduced in the ES6 so how we are doing the asynchronous operation before ES6 in the javascript
+EX-1 before ES6 asynchronous operation- also called callback hell or pyramid of doom
+
+function fetchData(callback) {
+  setTimeout(function () {
+    console.log("Data fetched");
+    callback();
+  }, 1000);
+}
+
+function processData(callback) {
+  setTimeout(function () {
+    console.log("Data processed");
+    callback();
+  }, 1000);
+}
+
+function displayResult() {
+  setTimeout(function () {
+    console.log("Result displayed");
+  }, 1000);
+}
+
+// Nested callbacks (callback hell)
+fetchData(function () {
+  processData(function () {
+    displayResult();
+  });
+});
+
