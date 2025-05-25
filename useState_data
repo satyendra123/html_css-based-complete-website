@@ -1,0 +1,5 @@
+Toggle visibility- 	         const [show, setShow] = useState(false)                                             // to store the false true
+Form data (single object)-	 const [formData, setFormData] = useState({name,age,roll})                           // to store the form data with objects
+List of items -	             const [items, setItems] = useState([])                                              // to store the array of objects
+Single object -	             const [user, setUser] = useState({})                                                // to store the single object data
+Input field (controlled) - 	 const [value, setValue] = useState('')                                              // to store the string value
