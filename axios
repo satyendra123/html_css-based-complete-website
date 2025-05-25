@@ -1,18 +1,17 @@
-#EX-1
-useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('YOUR_API_ENDPOINT_HERE');
-        const students = response.data
-        const namesArray = students.map(student => student.name);
-        setNames(namesArray);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+#EX-1 axios using get request                                                        EX-2  axios using post request
+useEffect(() => {                                                                           useEffect(() => {
+    const fetchData = async () => {                                                              const postData = async () => {
+      try {                                                                                      try {
+        const response = await axios.get('http://localhost:8000/api/user');                             const response = await axios.post('http://localhost:8000/api/user', { name: 'John Doe', email: 'john@example.com' });
+        const students = response.data                                                                  const students = response.data 
+        const namesArray = students.map(student => student.name);                                       console.log(students)
+        setNames(namesArray);                                                                        }
+      } catch (error) {                                                                           catch (error) {
+        console.error("Error fetching data:", error);                                                   console.error('Error posting data:', error);
+      }                                                                                               }
+    };                                                                                            };
+    fetchData();                                                                               postData();
+  }, []);                                                                                      }, []);
 
 
 #step-1 data.json => man lo ki server se mujhe kuch is form me data mil rha hai json ke form me
