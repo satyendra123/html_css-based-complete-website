@@ -16,8 +16,8 @@ fetch('http://localhost:8000/api/users',Myinit)             fetch('http://localh
      throw Error (res.statusError);                                       throw new Error(`HTTP error! status: ${res.status}`);  }
     }                                                                      return res.json(); })
 }).catch((error)=>{                                           .then((data) => { console.log("Success! Response data:", data); })
-   console.log("Error posting the data",error)                .catch((error) => {  console.log("Error posting the data:", error.message); });
-})                                                                
+   console.log("Error posting the data",error)                .catch((error) => {  console.log("Error posting the data:", error.message);
+})                                                          });                  
                                                                      
                                                                    
                                                               
