@@ -2,19 +2,23 @@ Note- fetch(url, Init) => fetch method jo hota hai wo two parameter leta hai. fi
 Note- fetch() method jo hota hai wo request body me string expect karta hai , raw object nahi isliye hum '{"name":"satyendra","age":26}' aise likhenge aur agr koi object likhna hoga 
 to JSON.stringify(payload) aise likhenge kyuki hume object ko string me convert karna hoga kyuki fetch ka request body string me data chahta hai
 
-EX-1 fetch post request
-Myinit = {
-      method:"POST",
-      headers:{
-                content-Type:"application/json"
+EX-1 fetch post request                                EX-2 
+Myinit = {                                                 const payload = {
+      method:"POST",                                                name: "satyendra",
+      headers:{                                                     age: 26
+                content-Type:"application/json"                    };
               },
-       body: '{"name":"satyendra","age":26}'
-}
-fetch('http://localhost:8000/api/users',Myinit)
-.then((res)=>{
-    if(!res.ok){
-     throw Error (res.statusError);
-    }
-}).catch((error)=>{
-   console.log("Error posting the data",error)
-})
+       body: '{"name":"satyendra","age":26}'               const myInit = {
+}                                                                 method: "POST",
+fetch('http://localhost:8000/api/users',Myinit)                   headers: {
+.then((res)=>{                                                               "Content-Type": "application/json"
+    if(!res.ok){                                                            },
+     throw Error (res.statusError);                                body: JSON.stringify(payload)
+    }                                                             };
+}).catch((error)=>{                                         fetch('http://localhost:8000/api/users', myInit)
+   console.log("Error posting the data",error)              .then((res) => {
+})                                                                 if (!res.ok) {
+                                                                      throw new Error(`HTTP error! status: ${res.status}`);  }
+                                                                    return res.json(); })
+                                                              .then((data) => { console.log("Success! Response data:", data); })
+                                                              .catch((error) => {  console.log("Error posting the data:", error.message); });
