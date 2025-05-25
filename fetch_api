@@ -30,6 +30,30 @@ Response {type: "basic",url: "http://localhost:8000/data",redirected: false,stat
 ✅ 2nd THEN - Parsed JSON Data:
 {id: 1,username: "satyendra",role: "admin"}
 
-                                                                   
+// Ex-1 Get request using .then()                                                        // Ex-1 Get request using async await
+fetch('http://localhost:8000/api/user', {                                                useEffect(() => {
+                                                                                           const getUser = async () => {
+  method: 'GET',                                                                            try { 
+  headers: {                                                                                      const res = await fetch('http://localhost:8000/api/user', { method: 'GET',  headers: { 'Content-Type': 'application/json'  } })
+    'Content-Type': 'application/json'                                                            if (!res.ok) {                                                             
+  },                                                                                                          throw new Error(`HTTP error! status: ${res.status}`);
+  credentials: 'include'                                                                                     }
+})
+.then((res) => {                                                                                   const data = await res.json();
+  if (!res.ok) {                                                                                   console.log("User data:", data);
+    throw new Error(`HTTP error! status: ${res.status}`);                                          console.log("ID:", data.id, "Roll:", data.roll, "Name:", data.name);
+  }                                                                                               } 
+  return res.json();                                                                           catch (error) {
+})                                                                                                         console.error("Fetch failed:", error.message);
+.then((data) => {                                                                                        }                                    
+  console.log("User data received:", data);                                                     };
+  console.log("ID:", data.id);                                                                 getUser();
+  console.log("Roll:", data.roll);                                                            }, []);
+  console.log("Name:", data.name);
+})
+.catch((error) => {
+  console.error("Error fetching user data:", error.message);
+});
+
                                                               
                                                               
