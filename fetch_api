@@ -1,4 +1,4 @@
--2Note- fetch(url, Init) => fetch method jo hota hai wo two parameter leta hai. first is the url and the 2nd one is the object in which i need to pass the method, headers, and body
+EX-2Note- fetch(url, Init) => fetch method jo hota hai wo two parameter leta hai. first is the url and the 2nd one is the object in which i need to pass the method, headers, and body
 Note- fetch() method jo hota hai wo request body me string expect karta hai , raw object nahi isliye hum '{"name":"satyendra","age":26}' aise likhenge aur agr koi object likhna hoga 
 to JSON.stringify(payload) aise likhenge kyuki hume object ko string me convert karna hoga kyuki fetch ka request body string me data chahta hai
 
