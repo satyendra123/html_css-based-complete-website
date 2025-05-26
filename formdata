@@ -1,0 +1,13 @@
+formData = {
+    email:"",
+    password:""
+}
+
+name="1234",
+value="Singhsatyendra885@gmail.com"
+
+name="password",
+value="Singhsatyendra"
+
+const updatedFormData = {...formData , [name]:value}
+console.log(updatedFormData)
