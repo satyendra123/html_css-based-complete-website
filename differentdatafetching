@@ -1,0 +1,52 @@
+1) agar backened se is tarah ka data aaye to in data ko hum kaise store karakar manage karte hai 
+{
+    "latest_entry": {
+        "id": 1,
+        "car_number": "up16cd1234",
+        "car_type": "4W",
+        "mobile_number": null,
+        "tag": "1234567891112",
+        "entry_time": "2025-06-06T04:53:10.409170Z",
+        "exit_time": null,
+        "active": true,
+        "created_at": "2025-06-06T01:53:33.181449Z",
+        "updated_at": "2025-06-06T04:53:10.409170Z"
+    },
+     "latest_entry": {
+        "id": 1,
+        "car_number": "up16cd1234",
+        "car_type": "4W",
+        "mobile_number": null,
+        "tag": "1234567891112",
+        "entry_time": "2025-06-06T04:53:10.409170Z",
+        "exit_time": null,
+        "active": true,
+        "created_at": "2025-06-06T01:53:33.181449Z",
+        "updated_at": "2025-06-06T04:53:10.409170Z"
+    },
+}
+
+2) 
+[
+    {
+        "id": 1,
+        "car_number": "up16cd1234",
+        "car_type": "4W",
+        "mobile_number": null,
+        "tag": "1234567891112",
+        "entry_time": "2025-06-06T04:53:10.409170Z",
+        "exit_time": null,
+        "active": true,
+        "created_at": "2025-06-06T01:53:33.181449Z",
+        "updated_at": "2025-06-06T04:53:10.409170Z"
+    }
+]
+
+3)
+{
+    "total_tags": 3,
+    "total_in_vehicle": 0,
+    "total_out_vehicle": 0,
+    "total_overstay_vehicles": 0
+}
+
