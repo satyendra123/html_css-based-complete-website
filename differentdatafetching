@@ -1,4 +1,4 @@
-1) agar backened se is tarah ka data aaye to in data ko hum kaise store karakar manage karte hai 
+1) agar backened se is tarah ka data aaye to in data ko hum kaise store karakar manage karte hai. aur mujhe isme date time ko extract karke time aur date nikalna hai
 {
     "latest_entry": {
         "id": 1,
@@ -48,5 +48,14 @@
     "total_in_vehicle": 0,
     "total_out_vehicle": 0,
     "total_overstay_vehicles": 0
+}
+
+Note- mujhe server par ye data send karna hai to mai ye chiz kaise karunga. aur mujhe input fields me validations bhi lgana hai ki fixed rate jo hai -ve value na le. mobile number jo hai kewal numbers hi le.
+{
+  "car_type": "2W",
+  "tag_number": "ABC1234",
+  "fixed_rate": 1500,
+  "start_date": "2025-06-01",
+  "end_date": "2025-12-01"
 }
 
