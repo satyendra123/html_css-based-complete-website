@@ -2,16 +2,16 @@
 {                                                                                              EX
     "latest_entry": {                                                                          const [latestGateAction, setLatestGateAction] = useState({ 
         "id": 1,                                                                                                                                  latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
-        "car_number": "up16cd1234",                                                                                                                latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
+        "car_number": "up16cd1234",                                                                                                               latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
         "car_type": "4W",                                                                                                                          });
         "mobile_number": null,                                                                useEffect(() => {
         "tag": "1234567891112",                                                                     const fetchGateAction = async () => {
-        "entry_time": "2025-06-06T04:53:10.409170Z",                                        
-        "exit_time": null,
-        "active": true,
-        "created_at": "2025-06-06T01:53:33.181449Z",
-        "updated_at": "2025-06-06T04:53:10.409170Z"
-    },
+        "entry_time": "2025-06-06T04:53:10.409170Z",                                                try {
+        "exit_time": null,                                                                                const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")
+        "active": true,                                                                                   const { new_entry, new_exit } = response.data;
+        "created_at": "2025-06-06T01:53:33.181449Z",                                                      setLatestGateAction({ latest_entry: new_entry ? { id: new_entry.id ?? null, car_number: new_exit.car_number ?? "", entry_time: new_entry.entry_time ?? "",exit_time: new_entry.exit_time ?? "", } : { id: null, car_number: "", entry_time: "", exit_time: "", },
+        "updated_at": "2025-06-06T04:53:10.409170Z"                                                                             latest_exit: new_exit ? { id: new_exit.id ?? null, car_number: new_exit.car_number ?? "", entry_time: new_exit.entry_time ?? "",exit_time: new_exit.exit_time ?? "", } : { id: null, car_number: "", entry_time: "", exit_time: "", }, 
+    },                                                                                                                        });
      "latest_entry": {
         "id": 1,
         "car_number": "up16cd1234",
