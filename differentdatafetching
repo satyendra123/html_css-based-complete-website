@@ -4,14 +4,14 @@
         "id": 1,                                                                                                                                  
         "car_number": "up16cd1234",                                                                                                               
         "car_type": "4W",                                                                                                                          
-        "mobile_number": null,                                                                useEffect(() => {
-        "tag": "1234567891112",                                                                     const fetchGateAction = async () => {
-        "entry_time": "2025-06-06T04:53:10.409170Z",                                                try {
-        "exit_time": null,                                                                                const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")
-        "active": true,                                                                                   const { new_entry, new_exit } = response.data;
-        "created_at": "2025-06-06T01:53:33.181449Z",                                                      setLatestGateAction({ latest_entry: new_entry ? { id: new_entry.id ?? null, car_number: new_exit.car_number ?? "", entry_time: new_entry.entry_time ?? "",exit_time: new_entry.exit_time ?? "", } : { id: null, car_number: "", entry_time: "", exit_time: "", },
-        "updated_at": "2025-06-06T04:53:10.409170Z"                                                                             latest_exit: new_exit ? { id: new_exit.id ?? null, car_number: new_exit.car_number ?? "", entry_time: new_exit.entry_time ?? "",exit_time: new_exit.exit_time ?? "", } : { id: null, car_number: "", entry_time: "", exit_time: "", }, 
-    },                                                                                                                        });
+        "mobile_number": null,                                                               
+        "tag": "1234567891112",                                                                     
+        "entry_time": "2025-06-06T04:53:10.409170Z",                                                
+        "exit_time": null,                                                                                
+        "active": true,                                                                                 
+        "created_at": "2025-06-06T01:53:33.181449Z",                                                     
+        "updated_at": "2025-06-06T04:53:10.409170Z"                                                                             
+    },                                                                                                                        
      "latest_entry": {
         "id": 1,
         "car_number": "up16cd1234",
@@ -34,7 +34,7 @@ useEffect(() => {                                                               
                const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")    useEffect(() => {
                const { new_entry, new_exit } = response.data;                                     const fetchGateAction = async () => {
                                                                                                   try {
-EX-3  in this add the keys dynamically at run time                                                                                                    const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")
+EX-3  in this add the keys dynamically at run time                                                        const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")
   const [latestGateAction, setLatestGateAction] = useState({});                                           const new_entry = response.data.latest_entry;
   useEffect(() => {                                                                                       const new_exit = response.data.latest_exit;
     const fetchGateAction = async () => {                                                                 // const {latest_entry:new_entry, latest_exit:new_exit} = response.data    Note- iska mtlb hota hai ki
