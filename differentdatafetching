@@ -58,6 +58,38 @@ EX-3  in this add the keys dynamically at run time                              
   }, []); 
   Note- const { latest_entry, latest_exit } = response.data; iska mtlb               Note-  // const {latest_entry:new_entry, latest_exit:new_exit} = response.data    Note- iska mtlb hota hai ki response.data.latest_entry wala data jo hai wo new_entry me chala jaye
                                                                                                           
+2)
+const data = {
+  latest_entry: [
+    {
+      id: 1,
+      car_number: "UP16AB1234",
+      entry_time: "2025-06-07T10:10:00Z",
+      exit_time: ""
+    },
+    {
+      id: 3,
+      car_number: "UP16XY9999",
+      entry_time: "2025-06-07T12:00:00Z",
+      exit_time: ""
+    }
+  ],
+  latest_exit: [
+    {
+      id: 2,
+      car_number: "UP16CD5678",
+      entry_time: "",
+      exit_time: "2025-06-07T11:20:00Z"
+    },
+    {
+      id: 4,
+      car_number: "UP16GH4321",
+      entry_time: "",
+      exit_time: "2025-06-07T12:45:00Z"
+    }
+  ]
+};
+
 
 
  2)                                                                    EX-      Note- axios hume 6 object deta hai response me, data,statuscode,statusText,headers,config,request 
