@@ -27,7 +27,7 @@
 }
 
 Note- Ex-1                                                                                     EX-2
-const [latestGateAction, setLatestGateAction] = useState({ latest_entry, latest_exit},         const [latestGateAction, setLatestGateAction] = useState({ 
+const [latestGateAction, setLatestGateAction] = useState({ latest_entry: null,latest_exit: null})         const [latestGateAction, setLatestGateAction] = useState({ 
 useEffect(() => {                                                                                                                      latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
          const fetchGateAction = async () => {                                                                                         latest_exit: {id: null,car_number: "",entry_time: "",exit_time: "",  },
          try {                                                                                                                      });
