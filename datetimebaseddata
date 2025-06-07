@@ -1,0 +1,64 @@
+const data = {
+  "latest_entry": {
+    "id": 1,
+    "car_number": "UP16AB1234",
+    "entry_time": "2025-06-07T10:10:00Z",
+    "exit_time": ""
+  },
+  "latest_exit": {
+    "id": 2,
+    "car_number": "UP16CD5678",
+    "entry_time": "",
+    "exit_time": "2025-06-07T11:20:00Z"
+  }
+}
+
+// By making the Date object. 
+const entry_time = data?.latest_entry?.entry_time;
+const dateobj = new Date(entry_time)
+console.log(dateobj.toString())  // Sat Jun 07 2025 10:10:00 GMT+0000 (Coordinated Universal Time)
+console.log(`${dateobj.getFullYear()} / ${dateobj.getMonth() + 1} / ${dateobj.getDate()} T ${dateobj.getHours()}: ${dateobj.getMinutes()}: ${dateobj.getSeconds()}`   );
+o/p-  2025/6/2  10:10:00
+
+Note- if i want the 06 instead of 6 then we need to format it
+const formatTwoDigits = (num) => String(num).padStart(2, '0');
+console.log(`${formatTwoDigits(day)}/${formatTwoDigits(month)}/${year} ` +`${formatTwoDigits(hours)}:${formatTwoDigits(minutes)}:${formatTwoDigits(seconds)}`);
+
+Note- if i need to add 5:30 in this then i want conversion UTC to IST then
+const entry_time = data?.latest_entry?.entry_time;
+const dateobj = new Date(entry_time);
+dateobj.setMinutes(dateobj.getMinutes() + 330);  // 5*60 + 30   so new dateobj will be converted to the IST time zone
+
+const formatTwoDigits = (num) => String(num).padStart(2, '0');
+const year = dateobj.getFullYear();
+const month = formatTwoDigits(dateobj.getMonth() + 1);
+const day = formatTwoDigits(dateobj.getDate());
+let hours = formatTwoDigits(dateobj.getHours());
+const minutes = formatTwoDigits(dateobj.getMinutes());
+const seconds = formatTwoDigits(dateobj.getSeconds());
+
+console.log(`${year}/${month}/${day} ${hours}:${minutes}:${seconds}`);
+
+Note- if user want the ampm in time then we need to do like this
+const ampm = hours >= 12 ? 'PM' : 'AM';
+hours = hours % 12;
+hours = hours ? hours : 12; // 0 => 12
+hours = formatTwoDigits(hours);
+  
+2) bind the 0 if it is 6 it will make 06
+const entry_time = data?.latest_entry?.entry_time;
+const dateobj = new Date(entry_time);
+console.log(dateobj.toString());
+
+const year = dateobj.getFullYear();
+const month = (dateobj.getMonth() + 1).toString().padStart(2, '0');
+const day = dateobj.getDate().toString().padStart(2, '0');
+const hours = dateobj.getHours().toString().padStart(2, '0');
+const minutes = dateobj.getMinutes().toString().padStart(2, '0');
+const seconds = dateobj.getSeconds().toString().padStart(2, '0');
+
+console.log(`${year} / ${month} / ${day} ${hours}:${minutes}:${seconds}`);
+
+3)
+
+  
