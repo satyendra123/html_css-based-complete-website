@@ -26,19 +26,19 @@
     },
 }
 
-Note- Ex-1                                                                                     EX-2
+Note- Ex-1                                                                                                EX-2
 const [latestGateAction, setLatestGateAction] = useState({ latest_entry: null,latest_exit: null})         const [latestGateAction, setLatestGateAction] = useState({ 
 useEffect(() => {                                                                                                                      latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
          const fetchGateAction = async () => {                                                                                         latest_exit: {id: null,car_number: "",entry_time: "",exit_time: "",  },
          try {                                                                                                                      });
-               const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")    useEffect(() => {
-               const { new_entry, new_exit } = response.data;                                     const fetchGateAction = async () => {
-                                                                                                  try {
-EX-3  in this add the keys dynamically at run time                                                        const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")
-  const [latestGateAction, setLatestGateAction] = useState({});                                           const new_entry = response.data.latest_entry;
-  useEffect(() => {                                                                                       const new_exit = response.data.latest_exit;
-    const fetchGateAction = async () => {                                                                 // const {latest_entry:new_entry, latest_exit:new_exit} = response.data    Note- iska mtlb hota hai ki
-      try {                                                                                               // const {latest_entry, latest_exit} = response.data
+               const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")               useEffect(() => {
+               const { new_entry, new_exit } = response.data;                                                const fetchGateAction = async () => {
+                                                                                                                try {
+EX-3  in this add the keys dynamically at run time                                                                   const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")
+  const [latestGateAction, setLatestGateAction] = useState({});                                                      const new_entry = response.data.latest_entry;
+  useEffect(() => {                                                                                                  const new_exit = response.data.latest_exit;
+    const fetchGateAction = async () => {                                                                            // const {latest_entry:new_entry, latest_exit:new_exit} = response.data    Note- iska mtlb hota hai ki
+      try {                                                                                                          // const {latest_entry, latest_exit} = response.data
         const response = await axios.get("http://127.0.0.1:8000/latest-gate-action", {
           headers: {
             "Content-Type": "application/json",
