@@ -1,9 +1,9 @@
 1) agar backened se is tarah ka data aaye to in data ko hum kaise store karakar manage karte hai. aur mujhe isme date time ko extract karke time aur date nikalna hai
 {                                                                                              EX
-    "latest_entry": {                                                                          const [latestGateAction, setLatestGateAction] = useState({ 
-        "id": 1,                                                                                                                                  latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
-        "car_number": "up16cd1234",                                                                                                               latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
-        "car_type": "4W",                                                                                                                          });
+    "latest_entry": {                                                                          
+        "id": 1,                                                                                                                                  
+        "car_number": "up16cd1234",                                                                                                               
+        "car_type": "4W",                                                                                                                          
         "mobile_number": null,                                                                useEffect(() => {
         "tag": "1234567891112",                                                                     const fetchGateAction = async () => {
         "entry_time": "2025-06-06T04:53:10.409170Z",                                                try {
@@ -25,6 +25,39 @@
         "updated_at": "2025-06-06T04:53:10.409170Z"
     },
 }
+
+Note- Ex-1                                                                                     EX-2
+const [latestGateAction, setLatestGateAction] = useState({ latest_entry, latest_exit},         const [latestGateAction, setLatestGateAction] = useState({ 
+useEffect(() => {                                                                                                                      latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
+         const fetchGateAction = async () => {                                                                                         latest_exit: {id: null,car_number: "",entry_time: "",exit_time: "",  },
+         try {                                                                                                                      });
+               const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")    useEffect(() => {
+               const { new_entry, new_exit } = response.data;                                     const fetchGateAction = async () => {
+                                                                                                  try {
+EX-3  in this add the keys dynamically at run time                                                                                                    const response = await axios.get("http://127.0.0.1:8000/latest-gate-action")
+  const [latestGateAction, setLatestGateAction] = useState({});                                           const new_entry = response.data.latest_entry;
+  useEffect(() => {                                                                                       const new_exit = response.data.latest_exit;
+    const fetchGateAction = async () => {                                                                 // const {latest_entry:new_entry, latest_exit:new_exit} = response.data    Note- iska mtlb hota hai ki
+      try {                                                                                               // const {latest_entry, latest_exit} = response.data
+        const response = await axios.get("http://127.0.0.1:8000/latest-gate-action", {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        const { latest_entry, latest_exit } = response.data;
+        setLatestGateAction({latest_entry,latest_exit,});
+      } catch (error) {
+        console.error("Error fetching gate action:", error);
+      }
+    };
+
+    fetchGateAction();
+    const interval = setInterval(fetchGateAction, 5000);
+    return () => clearInterval(interval);
+  }, []); 
+  Note- const { latest_entry, latest_exit } = response.data; iska mtlb               Note-  // const {latest_entry:new_entry, latest_exit:new_exit} = response.data    Note- iska mtlb hota hai ki response.data.latest_entry wala data jo hai wo new_entry me chala jaye
+                                                                                                          
 
 
  2)                                                                    EX-      Note- axios hume 6 object deta hai response me, data,statuscode,statusText,headers,config,request 
