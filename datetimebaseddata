@@ -42,7 +42,7 @@ console.log(`${year}/${month}/${day} ${hours}:${minutes}:${seconds}`);
 Note- if user want the ampm in time then we need to do like this
 const ampm = hours >= 12 ? 'PM' : 'AM';
 hours = hours % 12;
-hours = hours ? hours : 12; // 0 => 12
+hours = hours ? hours : 12; // 0 => 12   iska mtlb ye hai ki agar hours me 0 hai to usko 12 lega otherwise agar hours me jo value hai wahi lega. ye kewal 0 ko 12 likhe iske liye hai
 hours = formatTwoDigits(hours);
   
 2) bind the 0 if it is 6 it will make 06
