@@ -1,12 +1,12 @@
 1) agar backened se is tarah ka data aaye to in data ko hum kaise store karakar manage karte hai. aur mujhe isme date time ko extract karke time aur date nikalna hai
-{                             
-    "latest_entry": {
-        "id": 1,
-        "car_number": "up16cd1234",
-        "car_type": "4W",
-        "mobile_number": null,
-        "tag": "1234567891112",
-        "entry_time": "2025-06-06T04:53:10.409170Z",
+{                                                                                              EX
+    "latest_entry": {                                                                          const [latestGateAction, setLatestGateAction] = useState({ 
+        "id": 1,                                                                                                                                  latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
+        "car_number": "up16cd1234",                                                                                                                latest_entry: {id: null,car_number: "",entry_time: "",exit_time: "",  },
+        "car_type": "4W",                                                                                                                          });
+        "mobile_number": null,                                                                useEffect(() => {
+        "tag": "1234567891112",                                                                     const fetchGateAction = async () => {
+        "entry_time": "2025-06-06T04:53:10.409170Z",                                        
         "exit_time": null,
         "active": true,
         "created_at": "2025-06-06T01:53:33.181449Z",
