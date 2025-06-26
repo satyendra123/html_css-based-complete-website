@@ -1,0 +1,16 @@
+const form = {
+    'name':'satyendra',
+    'email':'',
+    'password':'',
+    'tag':'',
+    'rfid':''
+}
+
+const keys = Object.keys(form)
+console.log(keys)
+
+for(key of keys){
+    console.log(`${key} it's value is ${form[key]}`)
+}
+
+Ex-2
